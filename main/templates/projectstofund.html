@@ -1,0 +1,768 @@
+{% extends 'sitebase.html' %}
+{% load static %}
+
+{% block header %}
+    <header id="header" class="header d-flex align-items-center fixed-top">
+        <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+          <a href="index.html" class="logo d-flex align-items-center">
+            <img src="{% static 'assets/img/logo.png' %}" alt="">
+            <h1 class="sitename">FriendsForMatibi</h1> <span>.</span>
+          </a>
+
+          <nav id="navmenu" class="navmenu">
+            <ul>
+              <li><a href="{% url 'matibi:home' %}">Home</a></li>
+              <li><a href="{% url 'matibi:about' %}">About</a></li>
+              <li class="dropdown"><a href="#" class="active"><span>Projects</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="{% url 'matibi:runningprojects' %}">Ongoing Projects</a></li>
+                  <li><a href="{% url 'matibi:projectstofund' %}">Projects To Fund</a></li>
+                  <li><a href="{% url 'matibi:completedprojects' %}">Completed Projects</a></li>
+                </ul>
+              </li>
+              <li><a href="{% url 'matibi:news' %}">News</a></li>
+              <li><a href="{% url 'matibi:nookhubactivities' %}">Nook Hub</a></li>
+              <li><a data-bs-toggle="modal" data-bs-target="#ModalForm">Become a Member</a></li>
+            </ul>
+
+            <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+          </nav>
+
+        </div>
+      </header>
+{% endblock header %}
+
+{% block page_content %}
+     <!-- Page Title -->
+    <div class="page-title dark-background" style="background-image: url('{% static 'assets/img/hero-carousel/hero-carousel-3.jpg' %}');">
+      <div class="container position-relative">
+        <h1>PROJECTS</h1>
+      </div>
+    </div><!-- End Page Title -->
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Projects</h2>
+        <p>These projects are funded and are already running</p>
+      </div><!-- End Section Title -->
+
+ <!-- Funded Projects -->
+ <section id="features" class="features section">
+
+    <div class="container">
+
+      <ul class="nav nav-tabs row  g-2 d-flex" data-aos="fade-up" data-aos-delay="100" role="tablist">
+
+        <li class="nav-item col-3" role="presentation">
+          <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#features-tab-1" aria-selected="true" role="tab">
+            <h4>Project Nook Hostel</h4>
+          </a>
+        </li><!-- End tab nav item -->
+
+        <li class="nav-item col-3" role="presentation">
+          <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-2" aria-selected="false" tabindex="-1" role="tab">
+            <h4>Matibi Nook Hub Permaculture Project</h4>
+          </a><!-- End tab nav item -->
+
+        </li>
+        <li class="nav-item col-3" role="presentation">
+          <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-3" aria-selected="false" tabindex="-1" role="tab">
+            <h4>Nook – Center for Vocational Training</h4>
+          </a>
+        </li><!-- End tab nav item -->
+
+        <li class="nav-item col-3" role="presentation">
+          <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-4" aria-selected="false" tabindex="-1" role="tab">
+            <h4>Organic Gardening – two new gardens per year</h4>
+          </a>
+        </li><!-- End tab nav item -->
+
+      </ul>
+
+      <div class="tab-content" data-aos="fade-up" data-aos-delay="200">
+
+        <div class="tab-pane fade active show" id="features-tab-1" role="tabpanel">
+          <div class="row">
+            <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-around">
+              <h3>Education</h3>
+              <p class="fst-italic">Thanks to the longstanding support of the Leopold Bachmann Foundation, we have successfully established a functional self-learning center called «Nook» in Ward 3, Mwenezi. A Ward is a political unit similar to a municipal office in a canton. In our case, a canton is roughly equivalent to a district, specifically «Rutenga,» while the province of Masvingo, where Ward 3 is located, is approximately the size of Switzerland.
+
+                In the fourth and current learning cycle, over 90 individuals have registered to collectively explore what they want to learn to improve their economic, ecological, and social situations, thus contributing to the overall development of the community. Just at the beginning of this year Ward 2 and Ward 3 were put together, resuliting in a vast area spanning approximately 40 kilometers in radius. For those from the outskirts of Ward 2 and 3 and neighboring wards, the daily commute is too far, making the Nook inaccessible to them.
+
+                Some young men have temporarily rented rooms in nearby village houses to be part of the Nook, but the financial commitment is often too high, causing them to discontinue the cycle prematurely. For women, sleeping outside their homestead is culturally challenging.
+              </p>
+              <h4>
+                <br>
+                Goals
+              </h4>
+              <p>
+                With the Nook Hostel, we aim to provide accommodation for people who want to participate in the Nook program from a distance. The hostel will have separate dormitories for men and women. The primary goal is to make the Nook more open and inclusive with the Nook Hostel.
+                <br>
+                Another objective is to operate the Nook Hostel as a small business run by Nook Fellows. Fellows are individuals who have completed a cycle and successfully implemented their own projects. They understand the Nook logic and serve as multipliers of values and principles. Anyone has the opportunity to become a Nook Fellow through personal commitment. Fellows will learn what it means to run a hostel and the long-term activities involved. Accommodation prices should be very low, possibly even workable, to align with the primary goal.
+                The project involves a construction phase and an operational phase. Our request pertains to the initial construction costs, with the operation intended to cover its expenses. For construction, we will follow traditional architecture and use local materials. Local experts will collaborate with learners to build the hostel. We will also receive support from organizations such as Scope Zimbabwe and Kufunda Village, which already have constructed their buildings ecologically using local knowledge and materials.
+                <br>
+                The hostel will be integrated into our permaculture activities around the Nook, created as a prototype by the learners. Water retention with ponds and channels will help transform the hostel into a green garden. Outdoor areas like a fire pit, playground, and meeting spot under trees will gradually develop organically based on the initiatives of the Nook operators.
+                For the initial construction, we rely on borehole water and solar power—technologies already familiar to Nook Fellows and learners, who can mostly implement them themselves.
+                </p>
+              <h4>Region</h4>
+              <p>Friends for Matibi Trust, FFM Office, Mwenezi Business Center 1<br>
+                Ward 3 Mwenezi, District Rutenga, Masvingo, Zimbabwe</p>
+                <h4>Duration</h4>
+                <h5>Phase 1: Community Mobilization – Q1 2024</h5>
+                <p>Identify expertise within the community. Determine who is willing to participate in construction. Identify external expertise needed.</p>
+                <h5>Phase 2: Planning – Q2 2024</h5>
+                <p>Create simple architectural plans. Options include A-frame houses with high thatched roofs, two stories, or traditional round houses. Integrate the Nook Hostel into the permaculture and water management concept of the Nook with gardens, trees, shrubs, water reservoirs, and channels, gray and black water treatment.</p>
+                <h5>Phase 3: Construction – Q3 and Q4 2024</h5>
+                <p>Local construction workers using organic materials, supplemented by external experts for knowledge exchange and construction guidance. Permaculture-integrated sanitation facilities, solar installation on the roof, borehole, solar-powered pump, and water tank.</p>
+                <h5>Phase 4: Opening and operation – 2025 and beyond</h5>
+                <p>The running cost should be covered by a minimum fee of the learners and with external visitors. They will be very minimal consisting of two small salaries of Nook fellows and maintenance and repairs on the existing infrastructure. Additionally, the hostel needs to pay into a fund for the long-term maintenance of the buildings and for future expansion if needed and if the operating concept is successful. </p>
+                <h4>Target Audience</h4>
+                <p>People from Ward 3 and neighboring wards who want to participate in the Nook program but cannot commute daily due to the distance. Nook Fellows working on projects within the Nook and advocating for its impact. External visitors interested in understanding the Nook and its community impact.</p>
+                <h4>Vision of Impact</h4>
+                <p>The Nook Hostel will become the center for individuals committed to economic, social, and ecological transformation in the Nook and its surroundings. It will serve as a role model for sustainable building and business. With the Nook Hostel, we can extend the benefits of the Nook to the outskirts and beyond the borders of Ward 3.</p>
+                <h4>Financial Plan</h4>
+                <h5>Phase 1: Mobilization</h5>
+                <p>USD 2000.- for travel allowances, leaflet production, mobilization activities</p>
+                <h5>Phase 2: Preconstruction</h5>
+                <p>USD 5000.- for consulting, travels, visits of other permaculture eco-villages with the local team that will build the Nook.</p>
+                <h5>Phase 3: Construction</h5>
+                <p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">USD 20’000.- for two dormitory – one for women, one for men, each with a capacity of 20 beds</li>
+                        <li class="list-group-item">USD 10’000.- for two traditional houses for office and external visitors room</li>
+                        <li class="list-group-item">USD 12’000.- for a 5kva and a 10kva solar-power plants</li>
+                        <li class="list-group-item">USD 3’500.- for a borehole under wethole policy</li>
+                        <li class="list-group-item">USD 7’000.- for solar pump, water tank and pipes</li>
+                        <li class="list-group-item">USD 4’000.- for blair toilets</li>
+                        <li class="list-group-item">USD 8’000.- for two sanitary houses for women and men </li>
+                        <li class="list-group-item">USD 20’000.- for a water management and biogas system</li>
+                        <li class="list-group-item">USD 3’000.- for permaculture integration like ponds, digs, trees, plants, fireplace kitchen and furniture like beds, tables, chairs, hammocks, lounges
+                        </li>
+                      </ul>
+                </p>
+                <p>Sub-Total phase 3: USD 87’500.-</p>
+                <div class="h5">Grant Total all phases: USD 94’500.-
+                    Requested from other foundations: 70% = USD 66’150.-</div>
+
+            </div>
+            <div class="col-lg-6 order-1 order-lg-2 text-center">
+                <div id="carouselExampleCaptions" class="carousel slide">
+                    <div class="carousel-indicators">
+                      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                        <img src="{% static 'assets/img/projects/Kufunda-Classroom-Roof(1).jpeg' %}" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                          <h5>First slide label</h5>
+                          <p>Some representative placeholder content for the first slide.</p>
+                        </div>
+                      </div>
+                      <div class="carousel-item">
+                        <img src="{% static 'assets/img/projects/Kufunda-Classroom-Roof(1).jpeg' %}" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                          <h5>Second slide label</h5>
+                          <p>Some representative placeholder content for the second slide.</p>
+                        </div>
+                      </div>
+                      <div class="carousel-item">
+                        <img src="{% static 'assets/img/projects/Kufunda-Classroom-Roof(1).jpeg' %}" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                          <h5>Third slide label</h5>
+                          <p>Some representative placeholder content for the third slide.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+            </div>
+          </div>
+          <p></p>
+        </div><!-- End tab content item -->
+
+        <div class="tab-pane fade" id="features-tab-2" role="tabpanel">
+          <div class="row">
+            <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+              <h3>Sustainable Livelihood</h3>
+              <p class="fst-italic">Welcome to the transformative Matibi Nook Hub Permaculture initiative, a pioneering project spearheaded by FFM (Friends For Matibi). This comprehensive undertaking is rooted in our commitment to holistic community development, seeking to integrate sustainable practices into the fabric of the Matibi community. As a cornerstone of our multifaceted approach, this project harmonizes with ongoing FFM endeavors, encompassing sustainable livelihoods, education, health, and the innovative Nook self-learning space.
+
+                The Matibi Nook Hub Permaculture hopes to stand as a beacon of environmental stewardship and community resilience, aligning with FFM’s holistic approach, bringing new approaches and technologies to the Matibi community to solve the pressing challenges like water scarcity and low, unreliable harvest due to outdated agricultural structures and practices.
+            </p>
+            <h4>Problem</h4>
+            <p>Matibi grapples with pressing environmental challenges, from rampant deforestation to soil infertility and acute water scarcity. The actual ways of doing agriculture are no longer providing the people of Matibi with reliable and sustainable food. Crops are seeded only to dry out when rain is missing. This is more and more the case over the last ten years due to climate change which heavily affects the semi-arid area of Matibi turning it into a desert. Food production is not even enough to feed the families, leading to famines where only food from outside prevents people from starving – not to think about selling food to the market to make an income.
+
+                The shift in rains due to climate change leads to less groundwater, with the consequence of dry boreholes. The dams that were built 70 years ago, are not having enough capacity to cater water during the long periods of drought. The livestock is mostly strolling on the land looking for food and water leading to thin livestock that give less meat as would be possible and therefore livestock is sold to bad market prices, that’s if they survive.
+
+                People do stick to their traditional ways of doing agriculture because they don’t know an alternative way and because experimenting with new ways of farming and building up new technologies and adequate infrastructure is too expensive in the beginning. These old structures trap the farmers into a vicious cycle of having less and less the capacity to break the old patterns.
+            </p>
+            <h4>Our Solution</h4>
+            <p>The Matibi Nook Hub Permaculture project, guided by FFM, is a pivotal addition to our multifaceted initiatives within the Matibi community. Aligned with our commitment to sustainable livelihoods, education, health, and the innovative Nook learning space, permaculture serves as a holistic approach to enrich the lives of community members. Through ongoing projects like organic gardens, and borehole drilling, integrated with permaculture principles, our goal is to forge a resilient, self-sufficient community where farming for crops, vegetables and livestock are the foundations of a regenerative livelihood.
+
+                By fostering harmonious coexistence with nature and incorporating diverse skills learned in our Nook, we envision a future where both people and the environment thrive. This initiative aspires to transform our learning center community into a sustainable and harmonious ecosystem, rejuvenating the landscape, enhancing biodiversity, and securing reliable resources.
+
+                Through collaborative efforts, engagement with local and external expertise, and the integration of permaculture principles, we aim not only to address immediate challenges but also to pave the way for a resilient and thriving community in the long run.
+            </p>
+            <p>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Step 1: Showcasing permaculture at the Matibi Nook Hub Permaculture Centre and in the eight gardens in 2024 and 202</li>
+                    <li class="list-group-item">Objective: Setting Up A Model Nook Permaculture Garden </li>
+                    <li class="list-group-item">Description: This will involve land assessment and research, garden designs, and the construction of necessary infrastructure</li>
+                    <li class="list-group-item">Immediate Result: Appropriate crops are identified and planted, garden designs and infrastructure are set and permaculture learners and visitors have the accommodation and utilize the model permaculture center for hands-on learning</li>
+                    <li class="list-group-item">Outcome: Permaculture learners adopt or integrate permaculture practices in their own gardens (in this case the 8 gardens already in existence) resulting in increased yields.</li>
+                    <li class="list-group-item">Impact: This in turn results in improved standards of living due to income generated from the gardens, improved nutritional status of the people in the community, and improved capacity for ecosystem regeneration that sustainably supports life.</li>
+                  </ul>
+            </p>
+            <p>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Step 2: Bringing permaculture to schools in 2025 and ongoing</li>
+                    <li class="list-group-item">Objective: Establishing Permaculture Gardens In Schools </li>
+                    <li class="list-group-item">Description: Teaching practical new-generation attitude, behavior, treatment and usage of the ground at an early age in the targeted community.</li>
+                    <li class="list-group-item">Immediate Result: Preparing capable work power ready and willing to act.</li>
+                    <li class="list-group-item">Outcome: The idea is turned into action. The human resources are enough and replaceable. Those who start first will inspire and lead newcomers by personal practical example.</li>
+                    <li class="list-group-item">Impact: Changing the mindset to be more nature care oriented, new beliefs and desire to achieve more both for themselves and care for the animals, ground and natural resources. By helping kids to think more progressively, we could also influence parents to learn from them. The habits created at an early age are more sustainable and people apply them easily.</li>
+                </ul>
+            </p>
+            <p>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">3: Supporting local farmers to change their agricultural practices in 2025 and ongoing</li>
+                    <li class="list-group-item">Agriculture is the main source of food and income for the local people having long traditions. Stepping on this, we want to teach those who have already been doing that to change the way they used to apply. </li>
+                    <li class="list-group-item">Changing existing habits that are no longer efficient is more difficult indeed, than creating new ones, but FFM has had a presence in Matibi since 2005 and we have already built trust and relations locally. We also provide people with psychological support.</li>
+                    <li class="list-group-item">Result: After trying and seeing better results, farmers would increase their motivation to follow the advice practices.</li>
+                    <li class="list-group-item">Usage of the soil and water more efficiently and effectively. Bigger and safer quantity of healthier food.</li>
+                    <li class="list-group-item">Regeneration of the soil, better use of water to avoid droughts. Local people would become self-efficient, healthier, more satisfied, happier and proud of themselves. </li>
+                </ul>
+            </p>
+            <p>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Step 4: Provide market access for the local farmers as a cooperative starting from 2027 and ongoing</li>
+                    <li class="list-group-item">Objective: We want not just to help people to produce enough and healthy food for themselves, but by applying an approach that is more effective, efficient and with care to the ground as a future resource The overproduction would provide them with incomes and new opportunities to grow and multiply.</li>
+                    <li class="list-group-item">Description: Building trust by applying the latest science-proved approaches, influencing outside the community and even the country’s limits, and popularizing we would unlock doors to the open market.</li>
+                    <li class="list-group-item">Immediate Result: Better life standard for the local people.</li>
+                    <li class="list-group-item">Outcome: We will not just provide people with food and teach them how to make it, but equip them with life-long professions giving safety to their families.</li>
+                    <li class="list-group-item">Impact: This will be a new perspective and a better future for the whole of Mwenezi Ward. The economic, social and financial stability will decrease crime, poverty, and emigration and make the country a better destination for tourists and investors. The project could grow outside the ward’s limits and influence to make Zimbabwe a healthier, happier, more sustainable and safe place to live in.</li>
+                </ul>
+            </p>
+            <p>
+                With this proposal we are focusing on step 1, describing what it needs to create a showcase where the community is involved from the beginning. We would like to start with mobilization of already existing knowledge and resources, bring this together with external partners and already functioning permaculture projects in Zimbabwe to mutually learn, setup a dedicated learning space for permaculture at our Nook self-learning center and build a first showcase of how a functioning permaculture infrastructure could look like.
+            </p>
+            <p>
+                A first important project will be a better water management system, with ponds and trenches that hold back and store the water locally and nearby the permaculture gardens. At the same time, we need to plant trees to shade the gardens and the collected water resources from the burning sun. Livestock can be used to fertilize and plough the land to make it ready for gardening in a coming year.
+            </p>
+            <p>
+                We aim to better feed the livestock so people can get better prices on the market. Also we plan to open a local butcher shop to create community led and owned market access for the local livestock farmers. If you want to hear more about our innovative butchery projects that combines livestock with solar plants, contact us.
+            </p>
+            <p>
+                People need to have housing nearby in order to make the cultivation of the land a pleasant experience without long and expensive traveling. Therefore, we plan to integrate a Nook hostel for the learners in general, accommodating the Nook permaculture learners from the community. The Nook hostel will also give stay for partners and visitors who want to support and observe the progress of the permaculture project. For the Nook hostel, there is a separate project description, please ask for it if you are interested in knowing more about it.
+            </p>
+            <p>
+                The people involved from the community can stay at this first garden at the Matibi Nook, and start a living by cultivating the permaculture showcase, teaching others, and helping to bring the newly acquired concepts to schools and farms nearby in the community so the permaculture activities can naturally grow within the community.
+            </p>
+            <p>
+                Read more about the objectives, methodologies, roles, timelines and implementation plans under “Details of step 1”
+            </p>
+            <h4>Our Vision</h4>
+            <p>
+                We envision a Matibi community where permaculture practices are the new normal of how the community is doing farming and livestock breeding. We see a thousand green gardens, each having its own ponds and sinks for sustainable water management, healing the soil through sustainable permaculture practices in accordance with the livestock, shaded by trees that support the ecosystem of that farm and neighboring farms so they build a network of interwoven permaculture cells.
+            </p>
+            <p>
+                We envision that the people of Matibi will live from their agricultural activities by producing enough food for their own needs and for selling it to the markets. We hope that all the permaculture producers will engage in a sort of a cooperative to bundle their market efforts.
+            </p>
+            <p>
+                Our learning center Nook and the permaculture infrastructure are envisioned to be an example for other communities. There are already 32 Nooks around the world in India, Bangladesh, Uganda, Ruanda and two in Zimbabwe. We want to expand the self-learning concept and contextualize the permaculture approach for rural communities so we can scale the benefits for other communities in Zimbabwe and even worldwide.
+            </p>
+            <h4>Existing projects and partnerships</h4>
+            <p>
+                We are already in exchange with SCOPE Zimbabwe who will help us to build up the permaculture infrastructure. They also will support us in the Nook hostel setup as they have a small ecovillage already built north of Harare where housing and permaculture are harmoniously combined. SCOPE is very active in schools and colleges which will help us in step 2 of the project
+            </p>
+            <p>
+                The same is true for Kufunda village who are south of Harare combining learning, living, and permaculture in their ecovillage. The way Kufunda has constructed their classrooms is a role model for our next generation Nook buildings. The traditional way is costing less, using local materials and acting as a natural air conditioning for the classrooms. We are also in contact with Chikukwa and Umuntu with first get-to-know-each-other sessions.
+            </p>
+            <h4>Details of step 1</h4>
+            <h5>Objectives</h5>
+            <p>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Identify and engage individuals within the community interested in permaculture practices.</li>
+                    <li class="list-group-item">Formulate a dedicated permaculture team, including educators, learners, and community members.</li>
+                    <li class="list-group-item">Establish permaculture guilds as part of the learning curriculum, encouraging hands-on experience and skill development.</li>
+                    <li class="list-group-item">Design a permaculture landscape around the Nook </li>
+                    <li class="list-group-item">Plan and execute the planting of a diverse range of trees on the learning center land to showcase sustainable forestry practices.</li>
+                    <li class="list-group-item">Design and construct tree gardens, plant guilds, swales and ponds on the learning center premises to demonstrate water management techniques applicable to the local context.</li>
+                    <li class="list-group-item">Implement a small-scale sustainable grazing system within the learning center to address animal welfare and land use.</li>
+                </ul>
+            </p>
+            <h5>Timeline – beginning March 2024</h5>
+            <p>
+                <ul class="list-group list-group-flush roman">
+                    <li class="list-group-item">
+                        Month 1-2: Community Sensitization
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Conduct initial awareness sessions within the learning center community.</li>
+                            <li class="list-group-item">Gauge interest and identify potential participants for the permaculture team.</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        Month 3-4: Team Formation
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Formulate the permaculture team, including key roles and responsibilities.</li>
+                            <li class="list-group-item">Initiate team-building activities within the learning center.</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        Month 5-6: Educational Sessions
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Collaborate with the agricultural extension officer and SCOPE to organize educational sessions.</li>
+                            <li class="list-group-item">Integrate permaculture principles into existing psycho-social support camps.</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        Month 7-8: Study and Design the Landscape
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Assess the current state of the learning center’s landscape.</li>
+                            <li class="list-group-item">Collaborate with the permaculture team and external experts to design sustainable interventions.</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        Month 9-15: Plant Trees, Build Guilds, Swales, and Ponds
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Implement the designed interventions, starting with tree planting.</li>
+                            <li class="list-group-item">Establish permaculture guilds under the trees.</li>
+                            <li class="list-group-item">Construct swales and ponds for water management.</li>
+                            <li class="list-group-item">Expanding to first two schools.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </p>
+
+            <h5>Methodology and Implementation</h5>
+            <p>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        Identifying Individuals Interested in Permaculture
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Reach out to existing agricultural personnel in Matibi Nook through local networks, cooperative extensions, or agricultural offices.</li>
+                            <li class="list-group-item">Organize community meetings within the learning center to introduce the permaculture concept, gauge interest, and identify potential participants.</li>
+                            <li class="list-group-item">Conduct engaging awareness sessions using visual aids and interactive methods.</li>
+                            <li class="list-group-item">Establish feedback mechanisms to address community concerns and expectations.</li>
+                            <li class="list-group-item">Collaborate with mental health professionals during psycho-social support camps to introduce the therapeutic benefits of nature and permaculture.</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        Formulating the Permaculture Team
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Conduct informational sessions and workshops to educate the community about permaculture principles and its benefits.</li>
+                            <li class="list-group-item">Invite interested individuals to join the permaculture team, ensuring representation from diverse backgrounds within the community.</li>
+                            <li class="list-group-item">Facilitate team-building activities to foster collaboration and a sense of shared responsibility.</li>
+                            <li class="list-group-item">Provide clear guidelines on roles and responsibilities within the permaculture team.</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        Resource People Identification
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Leverage the expertise of our board member, the agricultural extension officer, as the primary contact for agricultural-related guidance and support.</li>
+                            <li class="list-group-item">Establish ongoing communication with SCOPE (Schools of Permaculture) in Zimbabwe, building a collaborative relationship for knowledge exchange.</li>
+                            <li class="list-group-item">Attend the upcoming training organized by SCOPE to further network, learn, and identify additional resource people within the permaculture community nation wide.</li>
+                            <li class="list-group-item">Collaborate with the agricultural extension officer and SCOPE to structure informative sessions.</li>
+                            <li class="list-group-item">Tailor educational content to the diverse learning styles of the community.</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        Designing the permaculture landscape
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Involve the community in the landscape assessment and design process.</li>
+                            <li class="list-group-item">Host collaborative workshops to gather insights and ideas for sustainable interventions.</li>
+                            <li class="list-group-item">Do an overall planning of the diverse elements and their placement within the Nook land</li>
+                            <li class="list-group-item">Learning while doing it – with the support of locals and external experts</li>
+                            <li class="list-group-item">Learning visits on other permaculture projects and ecovillages</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        Start implementing the design
+                        <ul class="list-group list-group-flush">
+                            <ul class="list-group list-group-flush">Plant trees, build fences, swales, and ponds:
+                                <li class="list-group-item">Implement interventions gradually, starting with community-led tree planting events.</li>
+                            </ul>
+                            <li class="list-group-item">Conduct hands-on workshops for building guilds, swales, and ponds, ensuring active participation.</li>
+                            <li class="list-group-item">Go out to the first two schools and prepare water and gardens</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        Challenges and Solutions
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Anticipate potential challenges such as resistance to change or resource limitations.</li>
+                            <li class="list-group-item">Establish a feedback loop to address challenges promptly, involving the community in problem-solving.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </p>
+
+            <h5>Roles and Responsibilities</h5>
+            <p>
+                <ul>
+                    <li class="list-group-item">
+                        Agricultural Extension Officer (Board Member): Pedzi Jemitius
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Serve as the primary liaison between the learning center and agricultural expertise.</li>
+                            <li class="list-group-item">Provide guidance on organic gardening practices and sustainable agriculture methods.</li>
+                            <li class="list-group-item">Facilitate workshops or training sessions on relevant agricultural topics.</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        Permaculture Team within the Learning Center: Gilbert Rupere
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Oversee the overall coordination of permaculture activities.</li>
+                            <li class="list-group-item">Liaise with the board members and external organizations for resources and support.</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        Community Engagement Coordinator: Nemanga
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Organize and facilitate community meetings to introduce and discuss permaculture concepts.</li>
+                            <li class="list-group-item">Work with the team leader to identify individuals interested in permaculture within the community.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </p>
+
+            <h5>Monitoring and Evaluation</h5>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                    Identifying Individuals Interested in Permaculture
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Reach out to existing agricultural personnel in Matibi Nook through local networks, cooperative extensions, or agricultural offices.</li>
+                        <li class="list-group-item">Organize community meetings within the learning center to introduce the permaculture concept, gauge interest, and identify potential participants.</li>
+                        <li class="list-group-item">Conduct engaging awareness sessions using visual aids and interactive methods.</li>
+                        <li class="list-group-item">Establish feedback mechanisms to address community concerns and expectations.</li>
+                        <li class="list-group-item">Collaborate with mental health professionals during psycho-social support camps to introduce the therapeutic benefits of nature and permaculture.</li>
+                    </ul>
+                </li>
+                <li class="list-group-item">
+                    Formulating the Permaculture Team
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Conduct informational sessions and workshops to educate the community about permaculture principles and its benefits.</li>
+                        <li class="list-group-item">Invite interested individuals to join the permaculture team, ensuring representation from diverse backgrounds within the community.</li>
+                        <li class="list-group-item">Facilitate team-building activities to foster collaboration and a sense of shared responsibility.</li>
+                        <li class="list-group-item">Provide clear guidelines on roles and responsibilities within the permaculture team.</li>
+                    </ul>
+                </li>
+                <li class="list-group-item">
+                    Resource People Identification
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Leverage the expertise of our board member, the agricultural extension officer, as the primary contact for agricultural-related guidance and support.</li>
+                        <li class="list-group-item">Establish ongoing communication with SCOPE (Schools of Permaculture) in Zimbabwe, building a collaborative relationship for knowledge exchange.</li>
+                        <li class="list-group-item">Attend the upcoming training organized by SCOPE to further network, learn, and identify additional resource people within the permaculture community nation wide.</li>
+                        <li class="list-group-item">Collaborate with the agricultural extension officer and SCOPE to structure informative sessions.</li>
+                        <li class="list-group-item">Tailor educational content to the diverse learning styles of the community.</li>
+                    </ul>
+                </li>
+                <li class="list-group-item">
+                    Designing the permaculture landscape
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Involve the community in the landscape assessment and design process.</li>
+                        <li class="list-group-item">Host collaborative workshops to gather insights and ideas for sustainable interventions.</li>
+                        <li class="list-group-item">Do an overall planning of the diverse elements and their placement within the Nook land</li>
+                        <li class="list-group-item">Learning while doing it – with the support of locals and external experts</li>
+                        <li class="list-group-item">Learning visits on other permaculture projects and ecovillages</li>
+                    </ul>
+                </li>
+                <li class="list-group-item">
+                    Start implementing the design
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Plant trees, build fences, swales, and ponds:
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Implement interventions gradually, starting with community-led tree planting events.</li>
+                            </ul>
+                        </li>
+                        <li class="list-group-item">Conduct hands-on workshops for building guilds, swales, and ponds, ensuring active participation.</li>
+                        <li class="list-group-item">Go out to the first two schools and prepare water and gardens</li>
+                    </ul>
+                </li>
+                <li class="list-group-item">
+                    Challenges and Solutions
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Anticipate potential challenges such as resistance to change or resource limitations.</li>
+                        <li class="list-group-item">Establish a feedback loop to address challenges promptly, involving the community in problem-solving.</li>
+                    </ul>
+                </li>
+            </ul>
+            <h5>Roles and Responsibilities</h5>
+            <p>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Agricultural Extension Officer (Board Member): Pedzi Jemitius
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Serve as the primary liaison between the learning center and agricultural expertise.</li>
+                            <li class="list-group-item">Provide guidance on organic gardening practices and sustainable agriculture methods.</li>
+                            <li class="list-group-item">Facilitate workshops or training sessions on relevant agricultural topics.</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">Permaculture Team within the Learning Center: Gilbert Rupere
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Oversee the overall coordination of permaculture activities.</li>
+                            <li class="list-group-item">Liaise with the board members and external organizations for resources and support.</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">Community Engagement Coordinator: Nemanga
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Organize and facilitate community meetings to introduce and discuss permaculture concepts.</li>
+                            <li class="list-group-item">Work with the team leader to identify individuals interested in permaculture within the community.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </p>
+            <h5>Monitoring and Evaluation</h5>
+            <p>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Indicators
+                        <ul class="list-group list-group-flush">
+                            <li class = "list-group-item">Motivation of community and team members</li>
+                            <li class = "list-group-item">integration into existing learning activities like nook cycles and PSS camps and local schools</li>
+                            <li class = "list-group-item">Improved vegetation cover within the learning center.</li>
+                            <li class = "list-group-item">Positive changes in the landscape, including soil fertility and overall biodiversity.</li>
+                            <li class = "list-group-item">Visible growth and transformation in plantations and grazing lands.</li>
+                            <li class = "list-group-item">Sustainable and long-lasting functionality of boreholes, ensuring consistent water access.</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">Key Performance Metrics
+                        <ul class="list-group list-group-flush">
+                            <li class = "list-group-item">People attending session and workshops</li>
+                            <li class = "list-group-item">Number of team members </li>
+                            <li class = "list-group-item">Feedback of team members</li>
+                            <li class = "list-group-item">Percentage increase in vegetation cover assessed through regular surveys.</li>
+                            <li class = "list-group-item">Quantifiable improvements in soil fertility and biodiversity.</li>
+                            <li class = "list-group-item">Measurable growth and health of planted trees and other vegetation.</li>
+                            <li class = "list-group-item">Reliability and longevity of boreholes, monitored through water flow and community feedback.</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">Feedback Mechanisms
+                        <class="list-group list-group-flush">
+                            <li class = "list-group-item">Establish regular community feedback sessions to gather qualitative insights.</li>
+                            <li class = "list-group-item">Conduct periodic assessments with the permaculture team and external experts.</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">Adaptation Strategies
+                        <ul class="list-group list-group-flush">
+                            <li class = "list-group-item">Develop contingency plans to address unexpected challenges.</li>
+                            <li class = "list-group-item">Utilize adaptive management strategies based on real-time feedback.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </p>
+            <h5>Sustainability</h5>
+            <p>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Community Capacity Building
+                        <ul class="list-group list-group-flush">
+                            <li class = "list-group-item">Establish permaculture activities as ongoing learnings within the learning center.</li>
+                            <li class = "list-group-item">Foster a culture of skill-sharing and continuous education among community members.</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">Local Leadership Development
+                        <ul class="list-group list-group-flush">
+                            <li class = "list-group-item">Identify and empower local leaders within the permaculture team and broader community.</li>
+                            <li class = "list-group-item">Encourage leadership roles in maintaining and expanding permaculture practices.</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">Integration with Education Programs
+                        <ul class="list-group list-group-flush">
+                            <li class = "list-group-item">Integrate permaculture principles into the self designed learning center’s activities</li>
+                            <li class = "list-group-item">Establish partnerships with local schools and educational institutions for broader impact.</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">Resource Mobilization
+                        <ul class="list-group list-group-flush">
+                            <li class = "list-group-item">Explore grant opportunities and partnerships for ongoing financial support.</li>
+                            <li class = "list-group-item">Implement income-generating projects within the permaculture framework to sustain resources.</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">Knowledge Repository:
+                        <ul class="list-group list-group-flush">
+                            <li class = "list-group-item">Create a digital or physical repository of permaculture knowledge and best practices.</li>
+                            <li class = "list-group-item">Facilitate knowledge transfer through workshops, mentorship, and accessible resources.</li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">Community Engagement Events:
+                        <ul class="list-group list-group-flush">
+                            <li class = "list-group-item">Organize periodic community events to celebrate achievements and reinforce the importance of permaculture.</li>
+                            <li class = "list-group-item">Encourage active participation in decision-making processes related to ongoing projects.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </p>
+            <h5>Budget</h5>
+            <p>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Month 1-2: Community Sensitization
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Conduct initial awareness sessions within the learning center community.</li>
+                            <li class="list-group-item">Gauge interest and identify potential participants for the permaculture team.</li>
+                            <li class="list-group-item">Budget USD 4000.-
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Catering</li>
+                                    <li class="list-group-item">External expert fees</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">Month 3-4: Team Formation
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Formulate the permaculture team, including key roles and responsibilities.</li>
+                            <li class="list-group-item">Initiate team-building activities within the learning center.</li>
+                            <li class="list-group-item">Budget USD 1000.-
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Team building activities</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">Month 5-6: Educational Sessions
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Collaborate with the agricultural extension officer and SCOPE to organize educational sessions.</li>
+                            <li class="list-group-item">Integrate permaculture principles into existing psycho-social support camps.</li>
+                            <li class="list-group-item">Workshops and trainings</li>
+                            <li class="list-group-item">Learning journeys to partner sites.</li>
+                            <li class="list-group-item">Budget USD 6000.-
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Workshops and trainings</li>
+                                    <li class="list-group-item">Learning journeys</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">Month 7-8: Study and Design the Landscape
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Assess the current state of the learning center’s landscape.</li>
+                            <li class="list-group-item">Collaborate with the permaculture team and external experts to design sustainable interventions.</li>
+                            <li class="list-group-item">Budget USD 2000.-
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Expert fees</li>
+                                    <li class="list-group-item">Review</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">Month 9-15: Plant Trees, Build Guilds, Swales, and Ponds
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Implement the designed interventions, starting with tree planting.</li>
+                            <li class="list-group-item">Establish permaculture guilds under the trees.</li>
+                            <li class="list-group-item">Construct swales and ponds for water management at the nook and two schools</li>
+                            <li class="list-group-item">Budget USD 40'000.-
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Construction labor costs</li>
+                                    <li class="list-group-item">Material and equipment</li>
+                                    <li class="list-group-item">Expert consultation for reviews</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                Total budget for 2024: USD 53’000.-
+            </p>
+            <p>For the upcoming years, we are estimating the same amount of money for school education programs and support for transforming existing farms into permaculture sites. With the knowledge acclaimed in the prototyping phase, we are able to transform an existing farm into a permaculture site with USD 15’000.- depending on the available water resources and another USD 15’000.- for the school gardens. </p>
+            <p>At the same time, we will invite school learners and community volunteers to our Nook to acquire the permaculture knowledge at our showcase site. The costs for this will be covered by the regular running budget of the Nook once the showcase site is up and running. </p>
+            <h4>Your support </h4>
+            <p>We are looking for financial donors and knowledge and support partners to build a network of resources. We already have knowledge and support partners from Zimbabwe and Switzerland like SCOPE, Kufunda, EAWAG, Fachhochschule OST and many more. The Oak Foundation with its regenerative agriculture program also showed interest and we handed in a concept note recently. The Leopold Bachmann Stiftung is a long-standing partner of ours and we are in direct exchange around all of our activities with them. We are eager to learn more about other partners that we could contact and who are willing to support us with know-how and in kind work. </p>
+            <p>Financially, we will contribute from our own financial means one third of what is needed. We are confident that we will be able to find two to three donors who are willing to fill the gap of the missing two third. We are looking for USD 35’000.- to start this long term project in the first year. </p>
+            </div>
+            <div class="col-lg-6 order-1 order-lg-2 text-center">
+              <img src="{% static 'assets/img/projects/HappyPigs.jpeg' %}" alt="" class="img-fluid">
+            </div>
+          </div>
+        </div><!-- End tab content item -->
+
+        <div class="tab-pane fade" id="features-tab-3" role="tabpanel">
+          <div class="row">
+            <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+              <h3>Education</h3>
+              <p class="fst-italic">
+                Update March 11, 2024 Costs for the Nook in 2024: 276,428 USD - including Nook Hostel construction, permaculture project, solar butchery project, new climate-friendly roof on the Nook, second vehicle - here is the...
+              </p>
+            </div>
+            <div class="col-lg-6 order-1 order-lg-2 text-center">
+              <img src="{% static 'assets/img/projects/nook.png' %}" alt="" class="img-fluid">
+            </div>
+          </div>
+        </div><!-- End tab content item -->
+
+        <div class="tab-pane fade" id="features-tab-4" role="tabpanel">
+            <div class="col-lg-12 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+              <h3>Sustainable Livelihood</h3>
+              <div class="row row-cols-1 row-cols-md-2 g-4">
+                <div class="col">
+                  <div class="card">
+                    <video src="{% static 'assets/img/projects/Organic Gardening – zwei neue Gärten pro Jahr – Freunde für Matibi.mp4' %}" muted autoplay loop></video>
+                    <div class="card-body">
+                      <h5 class="card-title">Update March 11, 2024</h5>
+                      <p class="card-text">Matibi Hospital Staff Garden is completed.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card">
+                    <video src="{% static 'assets/img/projects/Organic Gardening – zwei neue Gärten pro Jahr – Freunde für Matibi_2.mp4' %}" muted autoplay loop></video>
+                    <div class="card-body">
+                      <h5 class="card-title">Update May 12, 2023</h5>
+                      <p class="card-text">New water tanks are on the way</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card">
+                    <video src="{% static 'assets/img/projects/Organic Gardening – zwei neue Gärten pro Jahr – Freunde für Matibi_3.mp4' %}" muted autoplay loop></video>
+                    <div class="card-body">
+                      <h5 class="card-title"></h5>
+                      <p class="card-text">Reception at the gardens during the Christmas 2020 visit by Fungai and Lukas Mettler</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="card">
+                    <img src="{% static 'assets/img/projects/Organic-Gardening.jpeg' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title"></h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <h4>Update, September 2, 2022</h4>
+          <p>Four new boreholes for two existing gardens and two new gardens for primary school and hospital.</p>
+          <p class="h6">FINAL REPORT FOR DRILLING 2022</p>
+          <p class="h6">Introduction</p>
+          <p>Barely three months after drilling two boreholes in the gardens of Tamuka and Njeremoto and restoring their irrigation systems for a total cost of USD 14,500, the FFM has embarked on another SLI mega project. The new project involved USD 12,920 to drill four boreholes in Banda, Chimurudze, Tashinga and Tazvida gardens, which are scheduled to be supplied with drip irrigation in early 2023. Tashinga is a garden for hospital staff, Tazvida is a school garden and the other two are regular community gardens. The new boreholes bring the total number of gardens served by FFM boreholes to 8, including Tamuka, Njeremoto, Ruzambu and Kotamaurime. The FFM Trust aims to create 24 drip-irrigated organic gardens in the Matibi community by 2025. The 8 gardens already drilled are part of the first tranche of 12 which is expected to be completed next year 2023.</p>
+          <h6>How the project went down</h6>
+          <p>The preliminary work for this project involved 4 bids for drilling using the wet drilling method. Three drilling companies bid $4,200 per well but Riverton Investments which had previously bid $3,500 offered the service at $3,230 to get a discount. Finally, the cost for all four wells was $12,920 which included surveying, drilling, PVC casing and preliminary capacity testing. After the terms and conditions were approved, the contract was signed and work commenced on Sunday 14 August.</p>
+          <p>The Chimurudze borehole was the first to be drilled and it was located almost 100m from the garden according to the survey. The second borehole, Banda, was drilled on the same day, August 15, very close to the garden, but the driller suffered two breakdowns before it was successful. The third and fourth boreholes were at Tashinga (80m from the garden) and Tazvida (in the garden plot), where drilling took more time and consumed more diesel due to the hard dolerite rock. In total, the 4 boreholes took 3 days to complete as there were some incidents that hampered the work such as two incidents where the drilling rig vehicle got stuck in the mud. All boreholes yielded abundant water starting at a depth of about 10 meters and drilling continued to a depth of 60 meters.</p>
+          <p>The money for the completed boreholes was transferred on the day of completion but unfortunately the fund faced some problems in the banking system. The bank in Masvingo was late in communicating some important changes, which delayed the arrival of the money. At the time of writing, the money had not yet arrived in the FFM escrow account. The money transferred was the said USD 12,920 and about USD 150 meant as tokens for agricultural advisors.</p>
+          <p>The work to install drip irrigation in these 4 gardens will appear in the 2023 annual plan.</p>
+
+          <h4>Update, September 25, 2021 by Adnos Chikomo</h4>
+          <p>Two new gardens are now fenced (Banda and Chimurudze) and their toilets are being built, bringing the total number of gardens to 6 now. The Agriculture Officer agreed that there will be no new gardens next year as there is still a lot of work to be done in the existing gardens. Officials said that two pumps (for Njeremoto and Kotamaurime) have failed, which may have something to do with the pumping capacity, which should be reviewed before increasing the number of irrigated gardens. The garden in Tamuka, which lost its solar panels (4 pieces), is still struggling to replace them.
+            An interesting level of commitment is evident in the gardens as production has never stopped regardless of the challenges mentioned. The gardens have even held local agricultural exhibitions called field days.
+            The need to diversify activities in the existing gardens was also noted, which means that each garden wants to raise small livestock and keep honey bees to intensify activities in the facilities. This speaks to the importance of dew ponds and bee houses, which cannot take place as planned in 2021 but must not be cancelled in 2022 before moving on to the creation of new gardens in 2023. The contractor drilling a borehole in Ruzambu has been given until the end of September to continue the work or abandon it.</p>
+            <h4>Update – September 28, 2020</h4>
+            <p>Matibi Municipality intends to cover the entire ward 3 of Mwenezi District with organic gardens. Consultations have been held with the Ministry of Agriculture which concluded that 10 organic gardens are needed to meet the most pressing, immediate needs. So far there are 4 gardens of this type, created with the help of the FFM. Of these, Tamuka and Njeremoto gardens already have drip irrigation systems installed (unfortunately Tamuka is struggling to replace the stolen solar panels). The other two are Ruzambu and Kotamaurime which are willing to receive these solar powered irrigation systems as well. The new requirements for a targeted organic garden to receive irrigation funds include the construction of Blair toilets, a garden constitution and the allocation of a security guard to garden the facilities. The two new gardens are located along the large Lundi River near Ruzambu and Ruzogwe schools respectively.</p>
+            <p>When the current project was ready for execution in September 2019, it was stopped to first resolve the issue of the guarantee. By the time this issue was resolved, the bids were already a year old. The project coordinator approached the Irrigation Services Company to reconfirm their prices, which fortunately have not changed. This was also an opportunity to compare with other service providers. Leenomy Investments, Aqua Chem and Konicy Investments also submitted their own bids (which were far above Irrigation Services). Finally, the Irrigation Services company was retained, whose combined bid for both gardens is USD 20,690. Ruzambu Garden receives USD 10,555 while Kotamaurime Garden receives USD 10,135. Together with the community contribution of USD 8,098, the total cost of the project is USD 28,788.</p>
+            <hr class="hr" />
+            <p>Friends for Matibi is running a long-term project on the topic of "organic gardening" and "permaculture", a type of cultivation that is becoming increasingly popular in Africa. Under the guidance of the agricultural engineer responsible for Matibi, Jemitius Petudszai, the local women cultivate the fields with native plant species that are better equipped to withstand drought and pest infestation. The aim of the organic gardening project is to ensure self-sufficiency in Matibi in the first step. After that, surpluses can also be sold on the market.</p>
+            <p>A new garden construction starts with the construction of protective fences to protect against theft by humans and animals. In the second step, we equip the gardens with solar pumps and irrigation systems for the water supply. At the same time, the appropriate seeds are purchased, after which the training of the agricultural engineer begins.</p>
+            <p>Our garden project is therefore a pilot project for the entire region. However, we currently only have the resources to build two new gardens per year. The CHF 36,000 budgeted here is intended for two new gardens in 2020.</p>
+
+
+        </div><!-- End tab content item -->
+
+      </div>
+
+    </div>
+
+  </section><!-- /Funded Projects -->
+
+{% endblock page_content %}

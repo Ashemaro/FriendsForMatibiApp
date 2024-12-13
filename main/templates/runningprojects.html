@@ -1,0 +1,114 @@
+{% extends 'sitebase.html' %}
+{% load static %}
+
+{% block header %}
+    <header id="header" class="header d-flex align-items-center fixed-top">
+        <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+    
+          <a href="index.html" class="logo d-flex align-items-center">
+            <img src="{% static 'assets/img/logo.png' %}" alt="">
+            <h1 class="sitename">FriendsForMatibi</h1> <span>.</span>
+          </a>
+    
+          <nav id="navmenu" class="navmenu">
+            <ul>
+              <li><a href="{% url 'matibi:home' %}">Home</a></li>
+              <li><a href="{% url 'matibi:about' %}">About</a></li>
+              <li class="dropdown"><a href="#" class="active"><span>Projects</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="{% url 'matibi:runningprojects' %}">Ongoing Projects</a></li>
+                  <li><a href="{% url 'matibi:projectstofund' %}">Projects To Fund</a></li>
+                  <li><a href="{% url 'matibi:completedprojects' %}">Completed Projects</a></li>
+                </ul>
+              </li>
+              <li><a href="{% url 'matibi:news' %}">News</a></li>
+              <li><a href="{% url 'matibi:nookhubactivities' %}">Nook Hub</a></li>
+              <li><a data-bs-toggle="modal" data-bs-target="#ModalForm">Become a Member</a></li>
+            </ul>
+            
+            <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+          </nav>
+    
+        </div>
+      </header>
+{% endblock header %}
+
+{% block page_content %}
+    <!-- Page Title -->
+    <div class="page-title dark-background" style="background-image: url('{% static 'assets/img/hero-carousel/hero-carousel-3.jpg' %}');">
+      <div class="container position-relative">
+        <h1>PROJECTS</h1>
+      </div>
+    </div><!-- End Page Title -->
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Projects</h2>
+        <p>These projects are funded and are already running</p>
+      </div><!-- End Section Title -->
+
+ <!-- Funded Projects -->
+ <section id="features" class="features section">
+
+    <div class="container">
+
+      <ul class="nav nav-tabs row  g-2 d-flex" data-aos="fade-up" data-aos-delay="100" role="tablist">
+
+        <li class="nav-item col-3" role="presentation">
+          <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#features-tab-1" aria-selected="true" role="tab">
+            <h4>Incentive for Doctors and Drug Delivery</h4>
+          </a>
+        </li><!-- End tab nav item -->
+
+        <li class="nav-item col-3" role="presentation">
+          <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-2" aria-selected="false" tabindex="-1" role="tab">
+            <h4>textbooks and furniture for primary schools</h4>
+          </a><!-- End tab nav item -->
+
+        </li>
+        </li><!-- End tab nav item -->
+
+      </ul>
+
+      <div class="tab-content" data-aos="fade-up" data-aos-delay="200">
+
+        <div class="tab-pane fade active show" id="features-tab-1" role="tabpanel">
+          <div class="row">
+            <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+              <h3>Healthcare</h3>
+              <p class="fst-italic">
+                The Matibi Mission Hospital is very remote. Doctors are now rare in Zimbabwe, as many leave the country to practice in Botswana, South Africa or England. In order to recruit qualified doctors for the hospital, we pay USD 1,000 per doctor per month. Many hospitals are unable to finance this incentive system, which means that doctors stay away.
+              </p>
+              <p>
+                In our hospital, this incentive has enabled us to always have one or, in most cases, two doctors in the hospital. At the same time, we support the hospital by purchasing medication to the tune of USD 10,000 per year. This makes the hospital the only one in the wider area that functions normally. Patients travel long distances to receive treatment at the Matibi Mission Hospital. Even the regional hospital center in Neshuro often has to send patients to the smaller Matibi Hospital because they lack doctors and medication.
+              </p>
+              <p>Total annual budget for supporting the hospital with incentives and medication is approximately USD 50,000 per year.</p>
+            </div>
+            <div class="col-lg-6 order-1 order-lg-2 text-center">
+              <img src="{% static 'assets/img/projects/20231128_143228-scaled.jpg' %}" alt="" class="img-fluid">
+            </div>
+          </div>
+          <p></p>
+        </div><!-- End tab content item -->
+
+        <div class="tab-pane fade" id="features-tab-2" role="tabpanel">
+          <div class="row">
+            <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+              <h3>Education</h3>
+              <p class="fst-italic">
+                We have been sponsoring the primary school for three years with textbooks and furniture for the new classrooms. A textbook order costs about 3,000 USD. The textbooks stay in the school and are used by many classes until they either break or need to be replaced with a new version. The new school furniture such as benches and tables are also estimated to cost about 3,000 USD.
+                As the school continues to grow and introduce new classes, we are always in need of new furniture and new textbooks. If you would like to support us in educating children at St. Ambrose Primary School in Matibi, you are welcome to donate via our website .
+              </p>
+            </div>
+            <div class="col-lg-6 order-1 order-lg-2 text-center">
+              <img src="{% static 'assets/img/projects/Matibi-Mission-Primary-School-e1573831454280.jpeg' %}" alt="" class="img-fluid">
+            </div>
+          </div>
+        </div><!-- End tab content item -->
+
+      </div>
+
+    </div>
+
+  </section><!-- /Funded Projects -->
+            {% endblock page_content %}

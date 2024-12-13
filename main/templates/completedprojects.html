@@ -1,0 +1,153 @@
+{% extends 'sitebase.html' %}
+{% load static %}
+
+{% block header %}
+    <header id="header" class="header d-flex align-items-center fixed-top">
+        <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+          <a href="index.html" class="logo d-flex align-items-center">
+            <img src="{% static 'assets/img/logo.png' %}" alt="">
+            <h1 class="sitename">FriendsForMatibi</h1> <span>.</span>
+          </a>
+
+          <nav id="navmenu" class="navmenu">
+            <ul>
+              <li><a href="{% url 'matibi:home' %}">Home</a></li>
+              <li><a href="{% url 'matibi:about' %}">About</a></li>
+              <li class="dropdown"><a href="#" class="active"><span>Projects</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="{% url 'matibi:runningprojects' %}">Ongoing Projects</a></li>
+                  <li><a href="{% url 'matibi:projectstofund' %}">Projects To Fund</a></li>
+                  <li><a href="{% url 'matibi:completedprojects' %}">Completed Projects</a></li>
+                </ul>
+              </li>
+              <li><a href="{% url 'matibi:news' %}">News</a></li>
+              <li><a href="{% url 'matibi:nookhubactivities' %}">Nook Hub</a></li>
+              <li><a data-bs-toggle="modal" data-bs-target="#ModalForm">Become a Member</a></li>
+            </ul>
+
+            <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+          </nav>
+
+        </div>
+      </header>
+{% endblock header %}
+
+{% block page_content %}
+    <!-- Page Title -->
+    <div class="page-title dark-background" style="background-image: url('{% static 'assets/img/hero-carousel/hero-carousel-3.jpg' %}');">
+      <div class="container position-relative">
+        <h1>PROJECTS</h1>
+      </div>
+    </div><!-- End Page Title -->
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Projects</h2>
+        <p>These projects have been completed</p>
+      </div><!-- End Section Title -->
+
+ <!-- Funded Projects -->
+ <section id="features" class="features section">
+
+    <div class="container">
+
+      <ul class="nav nav-tabs row  g-2 d-flex" data-aos="fade-up" data-aos-delay="100" role="tablist">
+
+        <li class="nav-item col-3" role="presentation">
+          <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#features-tab-1" aria-selected="true" role="tab">
+            <h4>Construction of a new kindergarten building</h4>
+          </a>
+        </li><!-- End tab nav item -->
+
+        <li class="nav-item col-3" role="presentation">
+          <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-2" aria-selected="false" tabindex="-1" role="tab">
+            <h4>Matibi Mission Hospital Outreach Vehicle</h4>
+          </a><!-- End tab nav item -->
+
+        </li>
+        <li class="nav-item col-3" role="presentation">
+          <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-3" aria-selected="false" tabindex="-1" role="tab">
+            <h4>Examination room for primary school</h4>
+          </a>
+        </li><!-- End tab nav item -->
+
+        <li class="nav-item col-3" role="presentation">
+          <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-4" aria-selected="false" tabindex="-1" role="tab">
+            <h4>Dam water pump replaced</h4>
+          </a>
+        </li><!-- End tab nav item -->
+
+      </ul>
+
+      <div class="tab-content" data-aos="fade-up" data-aos-delay="200">
+
+        <div class="tab-pane fade active show" id="features-tab-1" role="tabpanel">
+          <div class="row">
+            <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+              <h3>Education</h3>
+              <p class="fst-italic">The District School Inspector (DSI) of Mwenezi attended a kindergarten graduation ceremony in December 2016 and had the opportunity to inspect the school. During the visit, the DSI found that the children were being taught in old dormitories located about 250 metres from the rest of the school. When the DSI inspected the condition of these dormitories and classrooms, he stated that the children were hardly safe in these dilapidated accommodations as not only the floors but also the walls had large cracks. When the school opened in the following academic year, the school received a formal directive prohibiting the use of the above-mentioned dormitories as classrooms.
+              </p>
+              <p>The application for support to build another classroom block required not only justification but also facts on the costs. However, it took 2 years for the school to prepare a proper cost dossier. At the end of 2019, a new architectural design was needed because the Ministry of Primary and Secondary Education had published a new standard that prohibited 3-classroom blocks. In March 2020, the school submitted the few bids it could get from potential contractors and the costs were simply shockingly exorbitant. A contractor had asked for $75 thousand to build the standard 2-classroom block, compared to $26 thousand asked for the construction of a 3-classroom block by an independent contractor in 2016.</p>
+              <p>In June 2020, tenders were called for the construction of the classroom block. More competitive prices were requested, and 15 firms gathered at the school premises to receive the tender details. Interviews with the shortlisted contractors were held on October 27, 2020, followed by background checks the following week. Finally, interviewers settled on a Nonaly-based firm that demanded thirty-one thousand seven hundred and fifty United States dollars ($31,750) and committed to start and complete the project in 75 working days with no upfront payment.
+
+                FFM has agreed to cover half of the costs. We are in negotiations with the diocese in Masvingo to also contribute to the costs. We are looking for further sponsors for this project !</p>
+            </div>
+            <div class="col-lg-6 order-1 order-lg-2 text-center">
+              <img src="{% static 'assets/img/projects/20231128_143228-scaled.jpg' %}" alt="" class="img-fluid">
+            </div>
+          </div>
+          <p></p>
+        </div><!-- End tab content item -->
+
+        <div class="tab-pane fade" id="features-tab-2" role="tabpanel">
+          <div class="row">
+            <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+              <h3>Healthcare</h3>
+              <p class="fst-italic">The need for an emergency vehicle for the hospital is an old problem that remained a low priority until late 2018. Then the threat of waterborne diseases required health workers to quickly reach the surrounding villages to help. At the time, there was only one old emergency vehicle, which was practically overwhelmed with errands, as the only other vehicle in the hospital was the emergency ambulance.
+              </p>
+              <p>When sourcing the vehicle became a top priority in 2018, it remained unfulfilled for a long time due to difficulties in sourcing inexpensive offers that we could afford. Local offers were at least $65,000 for the preferred Toyota Land Cruiser '78 station wagon. We considered three options to overcome this challenge. First, there was the suggestion of opting for a good used vehicle of the same make and model. However, this option also yielded very expensive offers. Vehicles that were up to 20 years old were charged up to $40,000 and more. The second option was to go for another model, specifically the Toyota Hilux Double Cab. Although slightly inferior to the Land Cruiser, a Hilux would still match the terrain and range. This option also reached its limits, with prices ranging between US$35,000 and US$45,000 for used South African Hiluxes manufactured between 2012 and 2014, with models manufactured in 2015 costing over US$50,000.</p>
+              <p>After the two options mentioned above failed, the planners had to try to import the vehicle from overseas. In this option, the hospital agreed to cover the remaining costs except for the purchase price, which FFM would pay. Discussions about this option brought the name Begeca into play, a German-based vehicle dealer for charitable organizations. Previously, the Catholic Diocese of Masvingo had procured 2 vehicles ordered from this company. The company quoted a cost estimate of 29,000 euros.</p>
+            </div>
+            <div class="col-lg-6 order-1 order-lg-2 text-center">
+              <img src="{% static 'assets/img/projects/Land-Cruiser-4WD-Hardtop(1).jpg' %}" alt="" class="img-fluid">
+            </div>
+          </div>
+        </div><!-- End tab content item -->
+
+        <div class="tab-pane fade" id="features-tab-3" role="tabpanel">
+          <div class="row">
+            <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+              <h3>Education</h3>
+              <p class="fst-italic">The Friends for Matibi have been supporting the St Ambrose Matibi Primary School in Mwenezi District since it reopened in 2013. Since the school reopened, we have been able to help with textbooks, computers, toilets, classrooms and furniture. The aim is to develop the school into a model school in the district, especially for the less privileged students.
+
+                With an enrollment of over 300 people, the school must now meet the requirement of having a secure storage facility for examination materials. Candidates in grade 7 must take their exams at other schools. The planned safe room thus becomes an urgent matter. FFM is supporting the school in converting an old office into a secure room and in purchasing a safe to store the exams. This means that Matibi Primary School meets the authorities' requirements and will be allowed to offer exams for all levels in the future.
+
+                The total cost is USD 8,226, of which FFM is contributing USD 6,486. The school itself is covering the difference at its own expense.
+              </p>
+            </div>
+            <div class="col-lg-6 order-1 order-lg-2 text-center">
+              <img src="{% static 'assets/img/projects/Matibi-Mission-Primary-School-e1573831454280.jpeg' %}" alt="" class="img-fluid">
+            </div>
+          </div>
+        </div><!-- End tab content item -->
+
+        <div class="tab-pane fade" id="features-tab-4" role="tabpanel">
+          <div class="row">
+            <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0 d-flex flex-column justify-content-center">
+              <h3>Sustainable Livelihood</h3>
+              <p class="fst-italic">Unfortunately, valuable infrastructure equipment can get stolen. This is what happened with the pump floating in the dam, even though a crocodile was "guarding" the system. Max Sieber has now organized a new pump in South Africa, including cables and brackets, which were installed by Wazah.
+              </p>
+            </div>
+            <div class="col-lg-6 order-1 order-lg-2 text-center">
+              <img src="{% static 'assets/img/projects/damm_wasserpumpe.jpg' %}" alt="" class="img-fluid">
+            </div>
+          </div>
+        </div><!-- End tab content item -->
+
+      </div>
+
+    </div>
+
+  </section><!-- /Funded Projects -->
+{% endblock page_content %}

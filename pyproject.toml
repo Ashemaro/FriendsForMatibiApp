@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "matibimain"
+version = "0.1.0"
+description = ""
+authors = ["Kudakwashe Marongedza <107895856+Ashemaro@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.13"
+django = "^5.1.4"
+whitenoise = "^6.8.2"
+pillow = "^11.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -1,0 +1,119 @@
+.
+{% extends 'sitebase.html' %}
+{% load static %}
+
+{% block header %}
+<header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="{% static 'assets/img/logo.png' %}" alt="">
+        <h1 class="sitename">FriendsForMatibi</h1> <span>.</span>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="{% url 'matibi:home' %}">Home</a></li>
+          <li><a href="{% url 'matibi:about' %}">About</a></li>
+          <li class="dropdown"><a href="#"><span>Projects</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="{% url 'matibi:runningprojects' %}">Ongoing Projects</a></li>
+              <li><a href="{% url 'matibi:projectstofund' %}">Projects To Fund</a></li>
+              <li><a href="{% url 'matibi:completedprojects' %}">Completed Projects</a></li>
+            </ul>
+          </li>
+          <li><a href="{% url 'matibi:news' %}" class="active">News</a></li>
+          <li><a href="{% url 'matibi:nookhubactivities' %}">Nook Hub</a></li>
+          <li><a data-bs-toggle="modal" data-bs-target="#ModalForm" class="active">Become a Member</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+{% endblock header %}
+
+
+
+      {% block page_content %}
+    <!-- Page Title -->
+    <div class="page-title dark-background" style="background-image: url('{% static 'assets/img/hero-carousel/hero-carousel-3.jpg'%}');">
+      <div class="container position-relative">
+        <h1>News</h1>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Blog Posts Section -->
+    <section id="blog-posts" class="blog-posts section">
+
+      <!-- Blog Posts-->
+
+        <div class="container">
+        <div class="row gy-4">
+
+          
+
+            {% for news in news_posts %}
+            <div class="col-lg-4">
+            <article class="position-relative h-100">
+
+              <div class="post-img position-relative overflow-hidden">
+                <img src="{{ news.image.url }}" class="img-fluid" alt="">
+                <span class="post-date">{{ news.created_on}}</span>
+              </div>
+              <div class="post-content d-flex flex-column">
+                <h3 class="post-title">{{ news.title}}</h3>
+                <div class="meta d-flex align-items-center">
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-person"></i> <span class="ps-2">{{ news.author }}</span>
+                  </div>
+                  <span class="px-3 text-black-50">/</span>
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-folder2"></i> <span class="ps-2"></span>
+                  </div>
+                </div>
+                <hr>
+                    <p> {{ news.content|slice:":200" }}</p>
+                <hr>
+                <a href="#" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+              </div>
+            </article>
+          </div><!-- End post list item -->
+            {% endfor %}
+          
+         
+        <!--/Post items-->
+
+        </div>
+      </div>
+
+    </section><!-- /Blog Posts Section -->
+
+    <!-- Blog Pagination Section -->
+    <section id="blog-pagination" class="blog-pagination section">
+
+      <div class="container">
+        <div class="d-flex justify-content-center">
+          {% if is_paginated %}
+            <span class="step-links">
+                {% if page_obj.has_previous %}
+                    <a href="?page=1">&laquo; first</a>
+                    <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+                {% endif %}
+        
+                <span class="current">
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                </span>
+        
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}">next</a>
+                    <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+                {% endif %}
+            </span>
+        {% endif %}
+        </div>
+      </div>
+
+    </section><!-- /Blog Pagination Section -->
+
+ {% endblock page_content%}
