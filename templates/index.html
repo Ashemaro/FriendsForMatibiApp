@@ -1,0 +1,255 @@
+{% extends 'sitebase.html' %}
+{% load static %}
+
+{% block header %}
+<header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="{% static 'assets/img/logo.png' %}" alt="">
+        <h1 class="sitename">FriendsForMatibi</h1> <span>.</span>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#" class="active">Home</a></li>
+          <li><a href="{% url 'matibi:about' %}">About</a></li>
+          <li class="dropdown"><a href="#"><span>Projects</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="{% url 'matibi:runningprojects' %}">Ongoing Projects</a></li>
+              <li><a href="{% url 'matibi:projectstofund' %}">Projects To Fund</a></li>
+              <li><a href="{% url 'matibi:completedprojects' %}">Completed Projects</a></li>
+            </ul>
+          </li>
+          <li><a href="{% url 'matibi:news' %}">News</a></li>
+          <li><a href="{% url 'matibi:nookhubactivities' %}">Nook Hub</a></li>
+          <li><a data-bs-toggle="modal" data-bs-target="#ModalForm" class="active">Become a Member</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+{% endblock header %}
+
+{% block page_content %}
+
+      <!--Hero Section Start-->
+      <section class="hero" style="background-image: url('{% static 'assets/img/hero-carousel/hero-carousel-3.jpg' %}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+      <div id="hero-carousel" class="carousel slide " data-bs-ride="carousel" data-bs-interval="5000" data-bs-duration="1000" >
+
+          <div class="carousel-item">
+          <div class="info d-flex align-items-end">
+            <div class="container">
+              <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-lg-6 text-center text-bg-dark bg-opacity-50">
+                  <h3>OUR VISION</h3>
+                  <p>Friends for Matibi envisions a thriving, inclusive, and sustainable community in Matibi where all individuals have access to essential resources, opportunities, and a supportive network. We are dedicated to fostering unity, empowerment, and holistic development, creating a brighter future for Matibi and its people.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--<img src="assets/img/hero-carousel/hero-carousel-2.jpg" alt="">-->
+        </div>
+
+        <div class="carousel-item">
+          <div class="info d-flex align-items-end">
+            <div class="container">
+              <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-lg-6 text-center text-bg-dark bg-opacity-50">
+                  <h3>OUR APPROACH</h3>
+                  <p>We are the only inch wide community development charity that is offering mile deep holistic support through a self-learning innovation center so that people can create their own independent and self-sustaining life, tackle together the most pressing problems of the community and make the community thrive. </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--<img src="assets/img/hero-carousel/hero-carousel-3.jpg" alt="">-->
+        </div>
+
+        <div class="carousel-item active">
+          <div class="info d-flex align-items-end">
+            <div class="container">
+              <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-lg-6 text-center text-bg-dark bg-opacity-50 text-light">
+                  <h3>WHO WE ARE</h3>
+                  <p>We are a Zimbabwean trust responsible for strategy and operation and a Swiss donor association supporting the community in Ward 3 Mwenezi, Matibi, Zimbabwe. We are focussing on holistic support for the community at Matibi through a catalyzing self-learning and self-help center called Nook.</p>
+                  <a href="#get-started" class="btn-get-started ">DONATE NOW</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--<img src="assets/img/hero-carousel/hero-carousel-1.jpg" alt="">-->
+        </div>
+
+        <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+        </a>
+
+        <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+        </a>
+
+      </div>
+    </section>
+          <!-- /Hero Section -->
+
+          <!--Projects Section Start-->
+          <section id="constructions" class="constructions section">
+              <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Projects</h2>
+        <p>These projects are funded and are already running</p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-item">
+              <div class="row">
+                <div class="col-xl-5">
+                  <div class="card-bg"><img src="{% static 'assets/img/projects/Kufunda-Classroom-Roof.jpeg' %}" alt=""></div>
+                </div>
+                <div class="col-xl-7 d-flex align-items-center">
+                  <div class="card-body">
+                    <a href="projectstofund.html"><h4 class="card-title">Project Nook Hostel.</h4></a>
+                    <p>Project Overview thanks to the longstanding support of the Leopold Bachmann Foundation, we have successfully established a functional self learning center called "NOOK" in Ward 3 Mwenezi. A ward is a political ........</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Card Item -->
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="card-item">
+              <div class="row">
+                <div class="col-xl-5">
+                  <div class="card-bg"><img src="{% static 'assets/img/projects/HappyPigs.jpeg' %}" alt=""></div>
+                </div>
+                <div class="col-xl-7 d-flex align-items-center">
+                  <div class="card-body">
+                    <a href="projectstofund.html"><h4 class="card-title">Matibi Nook Hub Permaculture Project</h4></a>
+                    <p>Welcome to the transformative Matibi Nook Hub Permaculture initiative, a pioneering project spearheaded by FFM (Friends For Matibi). This comprehensive undertaking is rooted in our commitment to holistic community development, seeking...</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Card Item -->
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="card-item">
+              <div class="row">
+                <div class="col-xl-5">
+                  <div class="card-bg"><img src="{% static 'assets/img/projects/nook.png' %}" alt=""></div>
+                </div>
+                <div class="col-xl-7 d-flex align-items-center">
+                  <div class="card-body">
+                    <a href="projectstofund.html"><h4 class="card-title">Nook – Center for Vocational Training</h4></a>
+                    <p>Update March 11, 2024 Costs for the Nook in 2024: 276,428 USD - including Nook Hostel construction, permaculture project, solar butchery project, new climate-friendly roof on the Nook, second vehicle - here is the...</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Card Item -->
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="card-item">
+              <div class="row">
+                <div class="col-xl-5">
+                  <div class="card-bg"><img src="{% static 'assets/img/projects/Organic-Gardening.jpeg' %}" alt=""></div>
+                </div>
+                <div class="col-xl-7 d-flex align-items-center">
+                  <div class="card-body">
+                    <a href="projectstofund.html"><h4 class="card-title">Organic Gardening – two new gardens per year</h4></a>
+                    <p>Update 11 March 2024 Matibi Hospital Staff Garden is ready. Update 12 May 2023 New water tanks are on the way Update, 2 September 2022 Four new boreholes for two existing gardens...</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Card Item -->
+        </div>
+      </div>
+          </section>
+            <!--Projects Section End-->
+
+          <!-- Vision Section -->
+    <section id="alt-services" class="alt-services section">
+
+      <div class="container">
+
+        <div class="row justify-content-around gy-4">
+          <div class="features-image col-lg-6" data-aos="fade-up" data-aos-delay="100"><img src="{% static 'assets/img/about.jpg' %}" alt=""></div>
+
+          <div class="col-lg-5 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
+            <h3>Our Vision</h3>
+            <p>Friends for Matibi envisions a thriving, inclusive, and sustainable community in Matibi where all individuals have access to essential resources, opportunities, and a supportive network. We are dedicated to fostering unity, empowerment, and holistic development, creating a brighter future for Matibi and its people.</p>
+
+            <div class="icon-box d-flex position-relative" data-aos="fade-up" data-aos-delay="300">
+              <i class="bi bi-easel flex-shrink-0"></i>
+              <div>
+                <h4><a href="" class="stretched-link">Our Holistic Support for Sustainable Progress in Matibi's Community</a></h4>
+                <p>We believe that sustainable progress is dependent on multiple factors like education, water, regeneration, nature, health. The complexity of community development needs a multidisciplinary approach. Therefore, we are trying to balance several pillars.
+
+                  Education: We are operating a self-learning center called Nook. It is a school without teachers, where the passion of imagination of the learners is at the very heart of learning. We provide scholarships, school supplies, and educational resources to empower children in Matibi to reach their full potential. Alternative education is the foundation for a brighter future.
+                  Health: Our healthcare initiatives include supporting the Matibi Mission hospital, revival of surgery at Matibi, health awareness campaigns, and support for local clinics. We believe that good health is essential for individuals and the community to thrive.
+                  Food: We work towards ensuring food security through sustainable agriculture practices, community gardens, and nutrition programs. Nourishing the community ensures their well-being and vitality.
+                  Income: We empower the community by supporting income-generating activities, vocational training, and entrepreneurship. Economic stability enables families to break the cycle of poverty.
+                  Environment: The permaculture activities are meant to regenerate the soil and introduce new ways of water management. This is necessary because due to climate change the rainy season is much shorter than before. We also invest in green power by putting solar power installation on the community's roof in exchange on cattle which is better fed through the permaculture activities and then are sold in the locally-led butchery we will open to circle the money back to the community. Humans are nature, if nature is ill, we are ill too.</p>
+              </div>
+            </div><!-- End Icon Box -->
+
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+          <!-- /Vision Section -->
+
+          <!-- News Posts Section -->
+    <section id="recent-blog-posts" class="recent-blog-posts section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>News</h2>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+        <div class="row gy-5">
+          {% for news in news_posts|slice:":3" %}
+          <div class="col-xl-4 col-md-6">
+            <div class="post-item position-relative h-100" data-aos="fade-up" data-aos-delay="100">
+              <div class="post-img position-relative overflow-hidden">
+                <img src="{{ news.image.url }}" class="img-fluid" alt="">
+                <span class="post-date">{{ news.created_on}}</span>
+              </div>
+
+              <div class="post-content d-flex flex-column">
+                <h3 class="post-title">{{ news.title}}</h3>
+                <div class="meta d-flex align-items-center">
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-person"></i> <span class="ps-2">{{ news.author }}</span>
+                  </div>
+                  <span class="px-3 text-black-50">/</span>
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-folder2"></i> <span class="ps-2"></span>
+                  </div>
+                </div>
+
+                <hr>
+
+                <a href="#" class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+
+              </div>
+
+            </div>
+          </div><!-- End post item -->
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+          <!-- /News Posts Section -->
+
+
+    {% endblock page_content %}
