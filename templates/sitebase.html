@@ -84,11 +84,11 @@
 
         <div class="col-lg-2 col-md-3 footer-links">
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
+            <li><a href="{% url 'matibi:home'%}">Home</a></li>
+            <li><a href="{% url 'matibi:about'%}">About</a></li>
             <li><a target="">Become A Member</a></li>
-            <li><a href="ongoingprojects.html">Projects</a></li>
-            <li><a href="news.html">News</a></li>
+            <li><a href="{% url 'matibi:completedprojects'%}">Projects</a></li>
+            <li><a href="{% url 'matibi:news'%}">News</a></li>
           </ul>
         </div>
 
