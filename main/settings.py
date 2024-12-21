@@ -151,4 +151,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 #Wagtail Settings
-WAGTAIL_SITE_NAME = 'My Example Site'
+WAGTAIL_SITE_NAME = 'Africa.FriendsForMatibiAdmin'

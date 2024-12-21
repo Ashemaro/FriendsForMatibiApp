@@ -1,14 +1,14 @@
 from django.views import generic
 from django.core.paginator import Paginator, EmptyPage
 from django.shortcuts import render
-from .models import NewsArticles, VisitCounter, NookHubArticles
+from .models import NewsArticlePage, VisitCounter, NookHubArticles
 
 
 class News(generic.TemplateView):
  # Optional, specifies the name of a GET field with the URL to redirect to after login
 
     def get(self, request):
-        news_posts = NewsArticles.objects.filter(status=1)
+        news_posts = NewsArticlePage.objects.filter(status=1)
 
         context = self.get_context_data()
         context.update({'news_posts': news_posts})
@@ -19,7 +19,7 @@ class News(generic.TemplateView):
 
 class index(generic.TemplateView):
     def get(self, request):
-        news_posts = NewsArticles.objects.filter(status=1)
+        news_posts = NewsArticlePage.objects.filter(status=1)
 
         context = self.get_context_data()
         context.update({'news_posts': news_posts})
@@ -27,7 +27,7 @@ class index(generic.TemplateView):
 
 
 class NewsDetail(generic.DetailView):
-    model = NewsArticles
+    model = NewsArticlePage
     template_name = 'news_details.html'
 
 class NookHub(generic.TemplateView):

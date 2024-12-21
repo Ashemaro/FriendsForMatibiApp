@@ -1,25 +1,43 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+from wagtail.models import Page
+from wagtail.fields import RichTextField
+from wagtail.images.models import Image
+from wagtail.admin.panels import FieldPanel
+
 STATUS = (
     (0, "Draft"),
     (1, "Publish")
 )
 
 
-class NewsArticles(models.Model):
-    title = models.CharField(max_length=200, unique=True)
-    slug = models.SlugField(max_length=200, unique=True)
+class NewsArticlePage(Page):
+    # Adding Wagtail-specific fields
+    article_title = models.CharField(max_length=200, unique=True)
+    article_slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='news_posts')
-    updated_on = models.DateTimeField(auto_now=True)
-    content = models.TextField()
-    created_on = models.DateTimeField(auto_now_add=True)
+    updated_on = models.DateTimeField(auto_now=True, editable=False)
+    content = RichTextField()  # Wagtail's RichTextField to allow rich text formatting
+    created_on = models.DateTimeField(auto_now_add=True, editable=False)
     status = models.IntegerField(choices=STATUS, default=0)
-    image = models.ImageField(upload_to='media/', blank=True, null=True)
+    image = models.ForeignKey(Image, null=True, blank=True, on_delete=models.SET_NULL, related_name='+')
 
+    # This is the class's meta information for ordering
     class Meta:
         ordering = ['-created_on']
 
+    # For Wagtail to correctly display the page in the admin interface
+    content_panels = Page.content_panels + [
+        FieldPanel('title'),
+        FieldPanel('slug'),
+        FieldPanel('author'),
+        FieldPanel('status'),
+        FieldPanel('image'),
+        FieldPanel('content'),
+    ]
+
+    # Optionally, you can also define settings for your page
     def __str__(self):
         return self.title
 
