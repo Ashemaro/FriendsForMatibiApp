@@ -1,1 +1,1 @@
-web: gunicorn matibisite.wsgi --log-file -
+web: gunicorn main.wsgi --log-file -
