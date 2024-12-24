@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-9*z4hkt2mp$=bvov7=fra)#gj_54&!_xspvq9&#op&$%r*7tgo
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['friends-for-matibi-05631585a1e8.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['friends-for-matibi-05631585a1e8.herokuapp.com', 'localhost', 'mammalian-beetle-1gjgq87mr6l5scdo6oi0zfx2.herokudns.com', 'meek-granita-881efe.netlify.app', 'localhost', '127.0.0.1']
 
 
 # Application definition
